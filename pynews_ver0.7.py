@@ -342,7 +342,7 @@ if st.button("Run"):
 
     subject = f"[ChatGPT 자동요약] {current_month}월 {current_week}주차 Pynews 스크랩_키워드: {search}"
     # 메인 실행 코드 부분에서 이메일 전송 부분
-    attachment_paths = ["/Users/kimhi/Downloads/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
+    attachment_paths = ["/Users/10154322/Downloads/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
     to_email_list = ["hyein.kim@kt.com"]
     to_email_list.extend(email_list)
     for to_email in to_email_list:
