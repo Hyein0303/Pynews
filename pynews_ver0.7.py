@@ -344,7 +344,7 @@ if st.button("Run"):
     # 메인 실행 코드 부분에서 이메일 전송 부분
     # attachment_paths = ["Pynews/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
     attachment_paths = []
-    to_email_list = ["hyein.kim@kt.com"]
+    to_email_list = []
     to_email_list.extend(email_list)
     for to_email in to_email_list:
         send_email(naver_email,naver_password,subject, table, [to_email], attachment_paths)
