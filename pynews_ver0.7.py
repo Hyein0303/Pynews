@@ -286,9 +286,9 @@ if st.button("Run"):
     email_body = f"""
     <p style="font-family: Malgun Gothic;" >
         안녕하세요.
-        <br><br>
-        제안수행2본부의 탄력적 P-TF 파이뉴스 팀입니다.
         <br>
+        제안수행2본부의 탄력적 P-TF 파이뉴스 팀입니다.
+        <br><br>
         본 메일은 Python을 이용하여 <b>특정 키워드 관련 기사를 크롤링</b>하고, 
         <span style="background-color: yellow; font-family: Malgun Gothic;">
             <b>ChatGPT가 내용을 요약해 자동으로 발송</b>
@@ -301,6 +301,7 @@ if st.button("Run"):
   
         <br><br>
         감사합니다.
+        <br>
         PYNEWS TF(신유현, 조혜진, 김도완, 김혜인, 배수빈, 이수영) 드림
     </p>
     """
