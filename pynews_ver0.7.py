@@ -98,7 +98,7 @@ def gpt_summarize(text):
     return ' '.join(summarized_blocks)  # 모든 블록의 요약을 합침
 
 # 이메일 전송 함수
-def send_email(naver_email,naver_password,subject, body, to_email, attachment_paths):
+def send_email(naver_email,naver_password,subject, body, to_email):
     from_email = naver_email
     password = naver_password
 
@@ -109,14 +109,11 @@ def send_email(naver_email,naver_password,subject, body, to_email, attachment_pa
 
     body_part = MIMEText(body, "html")
     msg.attach(body_part)
-
-    # 여러 첨부파일을 처리
-    for attachment_path in attachment_paths:
-        with open(attachment_path, "rb") as file:
-            original_filename = os.path.basename(attachment_path)
-            part = MIMEApplication(file.read(), Name=original_filename)
-            part["Content-Disposition"] = f"attachment; filename={original_filename}"
-            msg.attach(part)
+    
+    for file in file_contents :
+        part = MIMEApplication(file["content"], Name=file["name"])
+        part["Conent-Disposition"] = f'attachment; filename = "{file["name"]}"
+        msg.attach(part)
 
     smtp_server = "smtp.naver.com"
     smtp_port = 587
