@@ -355,7 +355,7 @@ if st.button("Run"):
     to_email_list = []
     to_email_list.extend(email_list)
     for to_email in to_email_list:
-        send_email(naver_email,naver_password,subject, table, [to_email], attachment_paths)
+        send_email(naver_email,naver_password,subject, table, [to_email])
     progress_bar.progress(1.0)
 
 
