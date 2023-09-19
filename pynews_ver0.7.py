@@ -186,6 +186,15 @@ end_date = st.date_input("검색 종료 날짜를 입력해주세요")
 page = st.number_input("크롤링할 시작 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 page2 = st.number_input("크롤링할 종료 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 email_list = st.text_area("이메일 목록을 입력하세요 (쉼표로 구분)").split(',')
+uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf", "jpg", "docx", "ppt", "png"]. accept_multiple_files = True)
+
+file_contents = []
+if uploaded files :
+    for uploaded_file in uploaded_files :
+        file_details = {"FileName" : uploaded_File.name, "FileType" : uploaded_file.type, "FileSize" : uploaded_file.size}
+        file_extension = file_details["FileName"].split(".")[-1]
+        file_content = uploaded_file.read()
+        file_contents.append({"content" : file_content, "name" : file_details["FileName"]}) with open(f"{file_details['FileName']}", "wb")as f : f.write(file_content)
 
 # OpenAI GPT-3 요약 함수
 openai.api_key = openai_api_key
@@ -344,7 +353,7 @@ if st.button("Run"):
     subject = f"[ChatGPT 자동요약] {current_month}월 {current_week}주차 Pynews 스크랩_키워드: {search}"
     # 메인 실행 코드 부분에서 이메일 전송 부분
     # attachment_paths = ["Pynews/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
-    attachment_paths = []
+    # attachment_paths = []
     to_email_list = []
     to_email_list.extend(email_list)
     for to_email in to_email_list:
