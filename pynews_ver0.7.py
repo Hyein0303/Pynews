@@ -189,7 +189,7 @@ email_list = st.text_area("이메일 목록을 입력하세요 (쉼표로 구분
 uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf", "jpg", "docx", "ppt", "png"], accept_multiple_files = True)
 
 file_contents = []
-if uploaded files :
+if uploaded_files :
     for uploaded_file in uploaded_files :
         file_details = {"FileName" : uploaded_File.name, "FileType" : uploaded_file.type, "FileSize" : uploaded_file.size}
         file_extension = file_details["FileName"].split(".")[-1]
