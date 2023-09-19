@@ -186,7 +186,7 @@ end_date = st.date_input("검색 종료 날짜를 입력해주세요")
 page = st.number_input("크롤링할 시작 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 page2 = st.number_input("크롤링할 종료 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 email_list = st.text_area("이메일 목록을 입력하세요 (쉼표로 구분)").split(',')
-uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf", "jpg", "docx", "ppt", "png"]. accept_multiple_files = True)
+uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf", "jpg", "docx", "ppt", "png"], accept_multiple_files = True)
 
 file_contents = []
 if uploaded files :
