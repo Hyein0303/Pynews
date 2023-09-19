@@ -194,7 +194,8 @@ if uploaded_files :
         file_details = {"FileName" : uploaded_File.name, "FileType" : uploaded_file.type, "FileSize" : uploaded_file.size}
         file_extension = file_details["FileName"].split(".")[-1]
         file_content = uploaded_file.read()
-        file_contents.append({"content" : file_content, "name" : file_details["FileName"]}) with open(f"{file_details['FileName']}", "wb")as f : f.write(file_content)
+        file_contents.append({"content" : file_content, "name" : file_details["FileName"]}) 
+        with open(f"{file_details['FileName']}", "wb") as f : f.write(file_content)
 
 # OpenAI GPT-3 요약 함수
 openai.api_key = openai_api_key
