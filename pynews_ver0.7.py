@@ -283,7 +283,8 @@ if st.button("Run"):
     temp = []
     for i in filtered_indices:
         temp.append(articles_data[i])
-    
+
+    temp.sort(reverse=True, key = 'date')
     sorted_articles = temp
     progress_bar.progress(0.6)
 
