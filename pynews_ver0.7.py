@@ -112,7 +112,7 @@ def send_email(naver_email,naver_password,subject, body, to_email):
     
     for file in file_contents :
         part = MIMEApplication(file["content"], Name=file["name"])
-        part["Conent-Disposition"] = f'attachment; filename = "{file["name"]}"'
+        part["Content-Disposition"] = f'attachment; filename = "{file["name"]}"'
         msg.attach(part)
 
     smtp_server = "smtp.naver.com"
