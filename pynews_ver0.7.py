@@ -277,7 +277,6 @@ if st.button("Run"):
 
     # 중복된 기사가 제거된 결과를 sorted_articles 변수에 다시 할당
     sorted_articles = filtered_sorted_articles
-    sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
     
     # 기사 유사도 필터링
     news_titles, filtered_indices = filter_similar_articles(news_titles)
@@ -314,6 +313,7 @@ if st.button("Run"):
     </p>
     """
     
+    sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
     
     rows = []
     for article in sorted_articles:
