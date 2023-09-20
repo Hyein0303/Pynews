@@ -183,6 +183,7 @@ end_date = st.date_input("검색 종료 날짜를 입력해주세요")
 page = st.number_input("크롤링할 시작 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 page2 = st.number_input("크롤링할 종료 페이지를 입력해주세요. ex)1(숫자만입력)", min_value=1)
 email_list = st.text_area("이메일 목록을 입력하세요 (쉼표로 구분)").split(',')
+additional_text = st.text_area("파일 관련 설명을 적어주세요")
 uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf", "jpg", "docx", "ppt", "png"], accept_multiple_files = True)
 
 file_contents = []
@@ -284,8 +285,6 @@ if st.button("Run"):
     for i in filtered_indices:
         temp.append(articles_data[i])
 
-    temp.sort(reverse=True, key = 'date')
-    sorted_articles = temp
     progress_bar.progress(0.6)
 
     
@@ -305,6 +304,8 @@ if st.button("Run"):
         [GPT 총평]은 KT 업무 담당자의 입장에서 ChatGPT가 기사 내용의 Insight를 발굴하도록 설정되어 있습니다.
         <br>
         기사 제목에 링크를 첨부드리오니 상세 기사는 클릭 후 참고 부탁드립니다.
+        <br>
+        {additional_text}
   
         <br><br>
         감사합니다.
