@@ -23,14 +23,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 def filter_similar_articles(titles):
     if len(titles) == 0 or all(x.strip() == '' for x in titles):
         print("No valid articles to process.")
-        return [], []
+        return []
 
     vectorizer = TfidfVectorizer()
     try:
         tfidf_matrix = vectorizer.fit_transform(titles)
     except ValueError:
         print("Could not fit TF-IDF due to empty vocabulary.")
-        return [], []
+        return []
 
     selected_titles = []
     selected_indices = []  # 유사한 기사를 필터링하기 위한 인덱스
