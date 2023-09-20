@@ -189,7 +189,7 @@ uploaded_files = st.file_uploader("여러 파일을 첨부하세요", type=["pdf
 file_contents = []
 if uploaded_files :
     for uploaded_file in uploaded_files :
-        file_details = {"FileName" : uploaded_File.name, "FileType" : uploaded_file.type, "FileSize" : uploaded_file.size}
+        file_details = {"FileName" : uploaded_file.name, "FileType" : uploaded_file.type, "FileSize" : uploaded_file.size}
         file_extension = file_details["FileName"].split(".")[-1]
         file_content = uploaded_file.read()
         file_contents.append({"content" : file_content, "name" : file_details["FileName"]}) 
