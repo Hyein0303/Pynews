@@ -285,7 +285,6 @@ if st.button("Run"):
         temp.append(articles_data[i])
     
     sorted_articles = temp
-    sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
     progress_bar.progress(0.6)
 
     
@@ -312,7 +311,6 @@ if st.button("Run"):
         PYNEWS TF(신유현, 조혜진, 김도완, 김혜인, 배수빈, 이수영) 드림
     </p>
     """
-    
     
     rows = []
     for article in sorted_articles:
