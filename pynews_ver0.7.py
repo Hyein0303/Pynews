@@ -285,7 +285,7 @@ if st.button("Run"):
         temp.append(articles_data[i])
     
     sorted_articles = temp
-
+    sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
     progress_bar.progress(0.6)
 
     
@@ -313,7 +313,6 @@ if st.button("Run"):
     </p>
     """
     
-    sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
     
     rows = []
     for article in sorted_articles:
