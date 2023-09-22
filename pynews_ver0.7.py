@@ -278,12 +278,15 @@ if st.button("Run"):
 
     # 중복된 기사가 제거된 결과를 sorted_articles 변수에 다시 할당
     sorted_articles = filtered_sorted_articles
-    
-    # 기사 유사도 필터링
-    news_titles, filtered_indices = filter_similar_articles(news_titles)
-    temp = []
-    for i in filtered_indices:
-        temp.append(articles_data[i])
+
+    if not filtered_sorted_articles : 
+        print("기사가 없습니다.")
+    else : 
+        # 기사 유사도 필터링
+        news_titles, filtered_indices = filter_similar_articles(news_titles)
+        temp = []
+        for i in filtered_indices:
+            temp.append(articles_data[i])
 
     progress_bar.progress(0.6)
 
