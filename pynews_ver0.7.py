@@ -299,7 +299,7 @@ if st.button("Run"):
         <span style="background-color: yellow; font-family: Malgun Gothic;">
             <b>ChatGPT가 내용을 요약해 자동으로 발송</b>
         </span>
-        되었습니다. (금주 키워드 : {search})
+        되었습니다. (금주 키워드 : {search.replace(' ', ', ')})
         <br>
         [GPT 총평]은 KT 업무 담당자의 입장에서 ChatGPT가 기사 내용의 Insight를 발굴하도록 설정되어 있습니다.
         <br>
