@@ -348,7 +348,7 @@ if st.button("Run"):
     </table>
     """
 
-    subject = f"[ChatGPT 자동요약] {current_month}월 {current_week}주차 Pynews 스크랩_키워드: {search}"
+    subject = f"[ChatGPT 자동요약] {current_month}월 {current_week}주차 ABC 트렌드 스크랩_키워드: {search.replace(' ', ', ')}"
     # 메인 실행 코드 부분에서 이메일 전송 부분
     # attachment_paths = ["Pynews/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
     # attachment_paths = []
