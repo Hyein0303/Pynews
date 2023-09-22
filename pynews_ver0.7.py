@@ -280,7 +280,7 @@ if st.button("Run"):
     sorted_articles = filtered_sorted_articles
 
     if not filtered_sorted_articles : 
-        print("기사가 없습니다.")
+        st.write("기사가 없습니다.")
     else : 
         # 기사 유사도 필터링
         news_titles, filtered_indices = filter_similar_articles(news_titles)
