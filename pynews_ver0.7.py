@@ -262,9 +262,6 @@ if st.button("Run"):
     # 기사 정보를 날짜 순서대로 정렬
     sorted_articles = sorted(articles_data, key=lambda x: x['date'], reverse=True)
 
-    if article['title'] == '초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다"':
-        sorted_articles.remove(article['초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다"'])
-        
     # 중복된 기사 제목 확인을 위한 집합(set) 생성
     unique_titles = set()
     
@@ -277,8 +274,9 @@ if st.button("Run"):
         title = re.sub(r'[^\uAC00-\uD7A30-9a-zA-Z\s]', '', title)
             
         if title not in unique_titles:
-            filtered_sorted_articles.append(article)
-            unique_titles.add(title)
+            if title != '초거대AI 상용화 눈 앞  예산 부족 법률 헛점으로 어렵다':
+                filtered_sorted_articles.append(article)
+                unique_titles.add(title)
 
     # 중복된 기사가 제거된 결과를 sorted_articles 변수에 다시 할당
     sorted_articles = filtered_sorted_articles
