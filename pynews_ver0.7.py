@@ -274,7 +274,7 @@ if st.button("Run"):
         title = re.sub(r'[^\uAC00-\uD7A30-9a-zA-Z\s]', '', title)
             
         if title not in unique_titles:
-            if title != '초거대AI 상용화 눈 앞  예산 부족 법률 헛점으로 어렵다':
+            if title != '초거대AI 상용화 눈 앞예산 부족법률 헛점으로 어렵다':
                 filtered_sorted_articles.append(article)
                 unique_titles.add(title)
 
