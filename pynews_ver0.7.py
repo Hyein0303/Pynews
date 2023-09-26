@@ -264,7 +264,6 @@ if st.button("Run"):
     
     # 중복된 기사 제목 확인을 위한 집합(set) 생성
     unique_titles = set()
-    unique_titles.remove('초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다')
     
     # 중복된 기사를 제거한 결과를 저장할 리스트 생성
     filtered_sorted_articles = []
@@ -273,6 +272,10 @@ if st.button("Run"):
         title = article['title']
         # 기사 제목이 이미 unique_titles 집합에 있다면 중복된 기사로 간주하고 제외
         title = re.sub(r'[^\uAC00-\uD7A30-9a-zA-Z\s]', '', title)
+        
+        if title == '초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다':
+            unique_titles.remove('초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다')
+            
         if title not in unique_titles:
             filtered_sorted_articles.append(article)
             unique_titles.add(title)
