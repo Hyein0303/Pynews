@@ -264,7 +264,7 @@ if st.button("Run"):
     
     # 중복된 기사 제목 확인을 위한 집합(set) 생성
     unique_titles = set()
-    unizue_titles.remove('초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다')
+    unique_titles.remove('초거대AI 상용화 눈 앞?…"예산 부족-법률 헛점으로 어렵다')
     
     # 중복된 기사를 제거한 결과를 저장할 리스트 생성
     filtered_sorted_articles = []
