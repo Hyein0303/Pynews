@@ -173,8 +173,6 @@ asyncio.set_event_loop(loop)
 
 # 사용자 입력을 받습니다.
 
-naver_email = st.text_input("네이버 이메일을 입력해주세요.")
-naver_password = st.text_input("네이버 비밀번호를 입력해주세요.", type="password")
 openai_api_key = st.text_input("OpenAI API 키를 입력해주세요.", type="password")
 
 search = st.text_input("검색할 키워드를 입력해주세요")
@@ -274,7 +272,7 @@ if st.button("Run"):
         title = re.sub(r'[^\uAC00-\uD7A30-9a-zA-Z\s]', '', title)
             
         if title not in unique_titles:
-            if title != '초거대AI 상용화 눈 앞예산 부족법률 헛점으로 어렵다':
+            if title != '리벨리온 IBM과 생성형 AI 데이터센터 파트너십 구축':
                 filtered_sorted_articles.append(article)
                 unique_titles.add(title)
 
@@ -357,6 +355,8 @@ if st.button("Run"):
     # 메인 실행 코드 부분에서 이메일 전송 부분
     # attachment_paths = ["Pynews/[테크&포커스] 황금알 AICC 잡아라… IT 인프라·통신기술 장전한 이통사.pdf"]
     # attachment_paths = []
+    naver_email = "pynews@naver.com"
+    naver_password = "pypypy!@#4"
     to_email_list = []
     to_email_list.extend(email_list)
     for to_email in to_email_list:
