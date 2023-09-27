@@ -87,7 +87,7 @@ def gpt_summarize(text):
     summarized_blocks = []
     for block in word_blocks:
         block_text = ' '.join(block)
-        system_instruction = "assistant는 KT의 직원입니다. user의 입력된 글을 보고 업계 동향을 파악하기 위한 핵심만 3문장으로 요약해준다. 각 문장은 '✔️'로 시작하고, 개조식 문체를 이용한다. 마지막에는 모든 입력된 글에 대한 KT AI컨택센터 담당자로서 알아야하는 점, 그리고 우리 회사가 앞으로 나아가야할 방향성과 전략 등 총평을 남긴다. 총평은 [GPT 총평]으로 시작한다.] "
+        system_instruction = "assistant는 KT의 직원입니다. user의 입력된 글을 보고 업계 동향을 파악하기 위한 핵심만 3문장으로 요약해준다. 각 문장은 '✔️'로 시작하고, 개조식 문체를 이용한다. 마지막에는 모든 입력된 글에 대한 KT 직원으로서 알아야하는 점, 그리고 우리 회사가 앞으로 나아가야할 방향성과 전략 등 총평을 남긴다. 총평은 [GPT 총평]으로 시작한다.] "
         messages = [{"role": "system", "content": system_instruction}, {"role": "user", "content": block_text}]
         try:
             response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
