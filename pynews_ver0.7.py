@@ -13,9 +13,6 @@ import openai
 import os
 from datetime import datetime
 
-pip install --upgrade pip
-
-
 # 네이버 뉴스 크롤링 관련 함수와 변수
 urllib3.disable_warnings()
 
